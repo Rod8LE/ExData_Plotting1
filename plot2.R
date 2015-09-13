@@ -4,7 +4,7 @@ data <- read.table("./household_power_consumption.txt", header=TRUE, sep=";", st
 
 #subset data
 subdata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
-date <- strptime(paste(subdata$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+date <- strptime(paste(subdata$Date, subdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 
 #grab column Global_active_power
 Global_active_power <- as.numeric(subdata$Global_active_power)
